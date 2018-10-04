@@ -66,7 +66,7 @@ Una empresa que contrate a estos cuatro profesionales, y cuyos honorarios de ref
 - dos de sus profesionales estudiaron en Rosario, uno en Hurlingham, ninguno (o sea cero) en San Martín.  
 
 Hacer los tests que sean necesarios para verificar esto. Se puede usar `fixture` para definir información que se usa en varios tests dentro de un _describe file_.
-
+3500
 <br>
 
 ## Etapa 2 - cobros
