@@ -1,0 +1,59 @@
+import profesionales.*
+class Universidad{
+	var ubicacion
+	var honorarios
+	method ubicacion(){return ubicacion}
+	method setUbicacion(ubi){ubicacion=ubi}
+	method setHonorarios(hono){honorarios=hono}
+	method honorarios(){return honorarios}
+}
+
+
+describe "Wea1"{
+
+	var juana=new ProfesionalVinculado()	
+	var melina=new ProfesionalAsociado()
+	var rocio=new ProfesionalLibre()
+	var luciana= new ProfesionalLibre()
+	var emp= new EmpresaDeServicios()
+	var sanMartin=new Universidad()
+	var rosario=new Universidad()
+	var hurlingham=new Universidad()
+	var corrientes=new Universidad()
+	
+	
+	
+	
+	
+	fixture{
+		hurlingham.setUbicacion("Buenos Aires")
+		corrientes.setUbicacion("Corrientes")
+		rosario.setUbicacion("Santa Fe")
+		sanMartin.setUbicacion("Buenos Aires")
+		hurlingham.setHonorarios(8800)
+		corrientes.setHonorarios(4200)
+		rosario.setHonorarios(2800)
+		sanMartin.setHonorarios(3500)	
+		juana.setUniversidad("Rosario")
+		melina.setTrabajo("Litoral")
+		melina.setUniversidad(corrientes)
+		rocio.setUniversidad(hurlingham)		
+		rocio.setTrabajo(#{"Santa Fe","Cordoba","Buenos Aires"})
+		rocio.setHonorarios(5000)
+		luciana.setUniversidad(rosario)
+		rocio.setHonorarios(3200)
+		rocio.setTrabajo(#{"Santa Fe","Entre Rios"})
+		emp.contratarProfesionales(juana)
+		emp.contratarProfesionales(melina)
+		emp.contratarProfesionales(rocio)
+		emp.contratarProfesionales(luciana)
+		
+	}
+	test "empresa"{
+		assert.equals(true,rocio.profesionalesCaros())/*falta test */
+		assert.equals(corrientes,emp.universidadesFormadoras)
+		assert.equals(hurlingham,emp.universidadesFormadoras)
+		assert.equals(rosario,emp.universidadesFormadoras)	
+		assert.equals(true,juana.profecionalMasBarato())
+		
+}}
